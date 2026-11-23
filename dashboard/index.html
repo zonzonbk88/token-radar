@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Token Launch Radar — pre-token protocols ranked by implied value</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<header class="masthead">
+  <div class="brand">
+    <span class="blip" aria-hidden="true"></span>
+    <div>
+      <h1>Token Launch Radar</h1>
+      <p class="tagline">Protocols that record no token yet, ranked by what a launch could be worth — and how to farm each one before it happens.</p>
+    </div>
+  </div>
+  <div class="stats" id="stats"></div>
+  <p class="method" id="method"></p>
+</header>
+
+<main id="board-view">
+  <section class="controls" aria-label="Board controls">
+    <label class="grow">Search
+      <input id="q" type="search" placeholder="Name or slug…" autocomplete="off">
+    </label>
+    <label>Category
+      <select id="cat"><option value="">All categories</option></select>
+    </label>
+    <label>Chain
+      <select id="chain"><option value="">All chains</option></select>
+    </label>
+    <label>Sort by
+      <select id="sort">
+        <option value="rank">Implied value</option>
+        <option value="tvl">TVL</option>
+        <option value="growth">7d growth</option>
+        <option value="age">Tokenless age</option>
+        <option value="multiple">Implied / TVL</option>
+      </select>
+    </label>
+    <label class="check">
+      <input id="watch" type="checkbox"> Watchlist only
+    </label>
+  </section>
+  <p class="count" id="count"></p>
+  <div class="table-wrap">
+    <table id="board">
+      <thead>
+        <tr>
+          <th class="num">#</th><th>Protocol</th><th>Category</th><th class="num">TVL</th>
+          <th class="num">7d</th><th class="num">Implied value</th><th class="num">Impl / TVL</th>
+          <th class="num">Age</th><th></th>
+        </tr>
+      </thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </div>
+  <p class="foot">Implied value is this board's own model claim, derived only from the sealed snapshot's figures — never a prediction that a token will be issued. “Records no token” describes the DefiLlama record, which is not proof a token does not exist.</p>
+</main>
+
+<main id="detail-view" hidden>
+  <p><a class="back" href="#/">← Back to the board</a></p>
+  <div id="detail"></div>
+</main>
+
+<script src="../data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
